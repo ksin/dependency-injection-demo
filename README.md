@@ -1,8 +1,12 @@
 # Dependency-injection-demo
 
-This README outlines the details of collaborating on this Ember application.
+This is a demo app to illustrate the utility of dependency injection in ember-cli. It queries Instagram's API for recent images related to a hashtag that the user inputs.
 
-A short introduction of this app could easily go here.
+This app uses the ember-cli-dotenv addon to expose your environment variables.
+To use the app with Instagram, create a .env file in the root of the repository and store your Instagram client id as INSTAGRAM_CLIENT_ID.
+For more information, see: https://www.npmjs.org/package/ember-cli-dotenv
+
+The demo is divided into two working commits. The first commit doesn't use dependency injection and can be viewed for example of pre-refactored code. The second commit injects a registered factory into the index controller where the queryInstagram action is called; this pattern allows for tests which are included in this commit.
 
 ## Prerequisites
 

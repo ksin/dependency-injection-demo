@@ -15,3 +15,6 @@
 /libpeerconnection.log
 npm-debug.log
 testem.log
+
+* Place environment variables here, see: https://www.npmjs.org/package/ember-cli-dotenv
+.env

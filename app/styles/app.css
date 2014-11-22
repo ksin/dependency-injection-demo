@@ -1,3 +1,97 @@
 html, body {
   margin: 20px;
 }
+
+h2 {
+  margin-bottom: 50px;
+  margin-left: 5px;
+  font-family: sans-serif;
+}
+
+.search-container {
+  width: 380px;
+  background-color: brown;
+  z-index: -1;
+  opacity: 0.9;
+  border-radius: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  border: 1px solid white;
+}
+
+li {
+  list-style: none;
+  margin: 20px 0;
+  margin-left: 10px;
+}
+
+.hash {
+  font-size: 35px;
+  margin-right: 10px;
+  color: white;
+}
+
+input {
+  font-size: 30px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+label {
+  font-size: 30px;
+  margin-right: 10px;
+  color: white;
+}
+
+input.search-field {
+  width: 300px;
+}
+
+input.count {
+  width: 80px;
+  text-align: center;
+}
+
+button {
+  font-size: 30px;
+  border-radius: 6px;
+  background-color: brown;
+  color: white;
+  border-color: white;
+  border-width: 3px;
+  opacity: 0.8;
+  margin-left: 232px;
+}
+
+button:hover {
+  opacity: 1.0;
+}
+
+.display-message {
+  background-color: white;
+  font-size: 30px;
+  width: 93%;
+  border-radius: 4px;
+  display: block;
+  padding: 5px;
+}
+
+.search-results {
+  display: inline-block;
+  width: 800px;
+  margin-left: 50px;
+}
+
+.search-results img {
+  display: inline-block;
+  margin: 5px;
+  width: 100px;
+  height: 100px;
+  vertical-align: top;
+  border: 1px solid gray;
+}
