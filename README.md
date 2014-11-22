@@ -8,6 +8,8 @@ For more information, see: https://www.npmjs.org/package/ember-cli-dotenv
 
 The demo is divided into two working commits. The first commit doesn't use dependency injection and can be viewed for example of pre-refactored code. The second commit injects a registered factory into the index controller where the queryInstagram action is called; this pattern allows for tests which are included in this commit.
 
+Accompanying blog-post: http://ken-sin.tumblr.com/post/103336528792/dependency-injection-in-ember-cli-using-instagram-api
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
