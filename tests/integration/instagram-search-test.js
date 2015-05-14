@@ -1,3 +1,5 @@
+/* globals module, test, expect, equal */
+
 import Ember from 'ember';
 import { test } from 'ember-qunit';
 import startApp from '../helpers/start-app';
@@ -8,12 +10,11 @@ var App;
 module('Integration: Instagram Search', {
   setup: function() {
     App = startApp();
-
-    App.register('instagram-api-client:main', Ember.Object.extend({
-       recentMediaForTag: function(tag, options) {
-         return Ember.RSVP.resolve(yoloInstagramRecentMediaJson);
-       }
-     }));
+    App.__container__.lookup('service:instagram-api-client').reopen({
+      recentMediaForTag: function(tag, options) {
+        return Ember.RSVP.resolve(yoloInstagramRecentMediaJson);
+      }
+    });
   },
 
   teardown: function() {

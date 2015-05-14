@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
   searchResults: null,
   count: 10,
 
-  instagramApiClient: null, // injected
+  instagramApiClient: Ember.inject.service(),
 
   actions: {
 
@@ -21,7 +21,7 @@ export default Ember.Controller.extend({
       };
 
       var self = this;
-      var apiCall = this.instagramApiClient.recentMediaForTag(this.get('tag'), options);
+      var apiCall = this.get('instagramApiClient').recentMediaForTag(this.get('tag'), options);
 
       apiCall.then(function(response) {
         if (!response.data) {
