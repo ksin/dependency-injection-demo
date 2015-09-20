@@ -2,6 +2,7 @@ import Ember from 'ember';
 import { test } from 'ember-qunit';
 import startApp from '../helpers/start-app';
 import {yoloInstagramRecentMediaJson} from './fixtures/instagram-json';
+import InstagramApiClientService from 'dependency-injection-demo/services/instagram-api-client';
 
 var App;
 
@@ -9,7 +10,7 @@ module('Integration: Instagram Search', {
   setup: function() {
     App = startApp();
 
-    App.__container__.lookup('service:instagram-api-client').reopen({
+    InstagramApiClientService.reopen({
       recentMediaForTag: function(tag, options) {
         return Ember.RSVP.resolve(yoloInstagramRecentMediaJson);
       }
