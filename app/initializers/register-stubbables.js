@@ -7,6 +7,6 @@ export default {
     if (!Ember.testing) {
       app.register('instagram-api-client:main', InstagramApiClient);
     }
-    app.inject('controller:index', 'instagramApiClient', 'instagram-api-client:main');
+    app.inject('component:instagram-search', 'instagramApiClient', 'instagram-api-client:main');
   }
 };
