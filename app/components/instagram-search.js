@@ -6,7 +6,7 @@ export default Ember.Component.extend({
   searchResults: null,
   count: 10,
 
-  instagramApiClient: null, // injected
+  instagramApiClient: Ember.inject.service(),
 
   actions: {
 
@@ -20,20 +20,19 @@ export default Ember.Component.extend({
         count: this.get('count') || 10
       };
 
-      var self = this;
-      var apiCall = this.instagramApiClient.recentMediaForTag(this.get('tag'), options);
+      var apiCall = this.get('instagramApiClient').recentMediaForTag(this.get('tag'), options);
 
-      apiCall.then(function(response) {
+      apiCall.then((response) => {
         if (!response.data) {
-          self.set('displayMessage', "Your search yielded no results.");
+          this.set('displayMessage', "Your search yielded no results.");
           return;
         }
-        self.set('displayMessage', "Check out these images!");
-        self.set('searchResults', response.data);
+        this.set('displayMessage', "Check out these images!");
+        this.set('searchResults', response.data);
       });
 
-      apiCall.catch(function() {
-        self.set('displayMessage', "Instagram failed to find images within 10 seconds or returned an error.");
+      apiCall.catch(() => {
+        this.set('displayMessage', "Instagram failed to find images within 10 seconds or returned an error.");
       });
     }
 

@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import ENV from "dependency-injection-demo/config/environment";
 
-export default Ember.Object.extend({
+export default Ember.Service.extend({
   appId: ENV.INSTAGRAM_CLIENT_ID,
 
   /*
